@@ -123,7 +123,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>5FE053E6-4E2E-4F77-8FEC-6EDC185F80B3</string>
+				<string>209E6E0A-65E3-4D97-825F-EF11D15B41A4</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -137,6 +137,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>FC2682DD-0BAE-4DE5-B239-9BC33BDED67F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>3B95C4A0-246F-408F-A4C3-89A27EE0E2B1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C0B7D081-6D04-4C84-9325-DF7D55E52C4C</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -253,31 +266,6 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>205A3BA0-4D8D-427D-8426-0A30F8429FCF</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>5FE053E6-4E2E-4F77-8FEC-6EDC185F80B3</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>209E6E0A-65E3-4D97-825F-EF11D15B41A4</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>sourceoutputuid</key>
-				<string>0183B767-20DA-460B-B42E-6C216BDE95AE</string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>7CAA3836-7D46-4BEC-9737-5C9274946DC4</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -611,7 +599,7 @@
 			<key>config</key>
 			<dict>
 				<key>availableviaurlhandler</key>
-				<false/>
+				<true/>
 				<key>triggerid</key>
 				<string>continue</string>
 			</dict>
@@ -800,7 +788,7 @@ function run(argv) {
 				<key>filetypes</key>
 				<array>
 					<string>com.adobe.pdf</string>
-					<string>dyn.ah62d4rv4ge80g2x4</string>
+					<string>com.vitorgalvao.mangareader.cbz</string>
 					<string>public.zip-archive</string>
 				</array>
 				<key>name</key>
@@ -825,38 +813,6 @@ function run(argv) {
 			<string>alfred.workflow.automation.task</string>
 			<key>uid</key>
 			<string>97FA0A60-94AC-4D89-BB64-B24FE20C1297</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>conditions</key>
-				<array>
-					<dict>
-						<key>inputstring</key>
-						<string>{var:extension}</string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>4</integer>
-						<key>matchstring</key>
-						<string>^(cbz|zip|pdf)$</string>
-						<key>outputlabel</key>
-						<string>Supported</string>
-						<key>uid</key>
-						<string>0183B767-20DA-460B-B42E-6C216BDE95AE</string>
-					</dict>
-				</array>
-				<key>elselabel</key>
-				<string>Unsupported</string>
-				<key>hideelse</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.conditional</string>
-			<key>uid</key>
-			<string>5FE053E6-4E2E-4F77-8FEC-6EDC185F80B3</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1002,27 +958,6 @@ function run(argv) {
 			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
 			<string>E586FA35-5782-4521-AF79-74504891C4D1</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>button1</key>
-				<string>Quit</string>
-				<key>button2</key>
-				<string></string>
-				<key>button3</key>
-				<string></string>
-				<key>description</key>
-				<string>File must be CBZ, ZIP, or PDF.</string>
-				<key>title</key>
-				<string>Unsupported Format</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.dialog</string>
-			<key>uid</key>
-			<string>7CAA3836-7D46-4BEC-9737-5C9274946DC4</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1189,7 +1124,7 @@ function run(argv) {
 			<key>config</key>
 			<dict>
 				<key>availableviaurlhandler</key>
-				<false/>
+				<true/>
 				<key>triggerid</key>
 				<string>restart</string>
 			</dict>
@@ -1310,7 +1245,7 @@ function run(argv) {
 readonly first_file="${1}"
 readonly deduced_name="$(printf '%s' "$(/usr/bin/basename "${first_file%.*}")" |
   /usr/bin/sed -E 's/\.[^.]+$//' | # Remove extension
-  /usr/bin/sed -E 's/(c|chap|chapter|v|vol|volume)? *[0-9]+//i' | # Remove volume/chapter numbers
+  /usr/bin/sed -E 's/(c|chap|chapter|v|vol|volume) *[0-9]+//i' | # Remove volume/chapter numbers
   /usr/bin/sed -E 's/ +$//' # Remove trailing spaces
 )"
 
@@ -1362,7 +1297,7 @@ DITTONORSRC=1 ditto -ck "${tmp_dir}" "${target_file}"
 				<integer>2</integer>
 				<key>filetypes</key>
 				<array>
-					<string>dyn.ah62d4rv4ge80g2x4</string>
+					<string>com.vitorgalvao.mangareader.cbz</string>
 				</array>
 				<key>name</key>
 				<string>Merge Chapters</string>
@@ -1577,9 +1512,53 @@ echo -n "${target_file}"</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>:mangahelper</string>
+				<key>skipuniversalaction</key>
+				<true/>
+				<key>subtext</key>
+				<string>Make macOS aware of it and set an identifier for CBZ files</string>
+				<key>text</key>
+				<string>Reveal Helper App in the Finder</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>3B95C4A0-246F-408F-A4C3-89A27EE0E2B1</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>path</key>
+				<string>Manga Reader Helper.app</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.revealfile</string>
+			<key>uid</key>
+			<string>C0B7D081-6D04-4C84-9325-DF7D55E52C4C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
-	<string>## Usage
+	<string>## Setup
+
+Reveal the Helper app in the Finder via the `:mangahelper` keyword. This is enough for make macOS to become aware of it and set an identifier for CBZ files.
+
+![Show helper app in Finder](images/about/helper.png)
+
+You can associate CBZ files with the app so they open in Alfred by default.
+
+## Usage
 
 Read Manga and Comic Books via the [Universal Action](https://www.alfredapp.com/help/features/universal-actions/). Supported formats include CBZ, ZIP, and PDF.
 
@@ -1590,6 +1569,7 @@ Read Manga and Comic Books via the [Universal Action](https://www.alfredapp.com/
 * &lt;kbd&gt;←&lt;/kbd&gt; Previous page.
 * &lt;kbd&gt;→&lt;/kbd&gt; Next page.
 * &lt;kbd&gt;↩&lt;/kbd&gt; Save current position and exit.
+* &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; Restart from beginning.
 
 When rerunning the Universal Action on the same file in the same location, pages prior to the last saved position are excluded. To reinclude all pages and start from the beginning, use the Universal Action with &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt;.
 
@@ -1608,7 +1588,7 @@ Merge different chapters into a single file via the `Merge Chapters` Universal A
 		<key>0CBA1563-9EC6-405C-83A1-FB05605C00B4</key>
 		<dict>
 			<key>xpos</key>
-			<real>2690</real>
+			<real>2490</real>
 			<key>ypos</key>
 			<real>310</real>
 		</dict>
@@ -1617,7 +1597,7 @@ Merge different chapters into a single file via the `Merge Chapters` Universal A
 			<key>note</key>
 			<string>Check for exported folder</string>
 			<key>xpos</key>
-			<real>1170</real>
+			<real>970</real>
 			<key>ypos</key>
 			<real>215</real>
 		</dict>
@@ -1631,21 +1611,21 @@ Merge different chapters into a single file via the `Merge Chapters` Universal A
 		<key>205A3BA0-4D8D-427D-8426-0A30F8429FCF</key>
 		<dict>
 			<key>xpos</key>
-			<real>1740</real>
+			<real>1540</real>
 			<key>ypos</key>
 			<real>295</real>
 		</dict>
 		<key>209E6E0A-65E3-4D97-825F-EF11D15B41A4</key>
 		<dict>
 			<key>xpos</key>
-			<real>865</real>
+			<real>665</real>
 			<key>ypos</key>
 			<real>195</real>
 		</dict>
 		<key>262BA42A-1EB2-4C34-BB51-F543CF47261A</key>
 		<dict>
 			<key>xpos</key>
-			<real>2930</real>
+			<real>2730</real>
 			<key>ypos</key>
 			<real>495</real>
 		</dict>
@@ -1654,7 +1634,7 @@ Merge different chapters into a single file via the `Merge Chapters` Universal A
 			<key>note</key>
 			<string>Save page</string>
 			<key>xpos</key>
-			<real>3065</real>
+			<real>2865</real>
 			<key>ypos</key>
 			<real>310</real>
 		</dict>
@@ -1672,6 +1652,13 @@ Merge different chapters into a single file via the `Merge Chapters` Universal A
 			<key>ypos</key>
 			<real>665</real>
 		</dict>
+		<key>3B95C4A0-246F-408F-A4C3-89A27EE0E2B1</key>
+		<dict>
+			<key>xpos</key>
+			<real>75</real>
+			<key>ypos</key>
+			<real>830</real>
+		</dict>
 		<key>3BCF31C4-9853-4E8C-B6E1-93822B3C1817</key>
 		<dict>
 			<key>xpos</key>
@@ -1682,7 +1669,7 @@ Merge different chapters into a single file via the `Merge Chapters` Universal A
 		<key>3C26F2BF-13A6-4E56-812D-ED89B37D6730</key>
 		<dict>
 			<key>xpos</key>
-			<real>2890</real>
+			<real>2690</real>
 			<key>ypos</key>
 			<real>310</real>
 		</dict>
@@ -1710,7 +1697,7 @@ Merge different chapters into a single file via the `Merge Chapters` Universal A
 		<key>4918550A-9A3C-428F-A28C-6DBEE6554590</key>
 		<dict>
 			<key>xpos</key>
-			<real>1505</real>
+			<real>1305</real>
 			<key>ypos</key>
 			<real>295</real>
 		</dict>
@@ -1726,23 +1713,16 @@ Merge different chapters into a single file via the `Merge Chapters` Universal A
 			<key>note</key>
 			<string>Extract file</string>
 			<key>xpos</key>
-			<real>1505</real>
+			<real>1305</real>
 			<key>ypos</key>
 			<real>440</real>
 		</dict>
 		<key>55C641E5-1FCC-4984-AC15-57A9B35E7AE3</key>
 		<dict>
 			<key>xpos</key>
-			<real>1505</real>
+			<real>1305</real>
 			<key>ypos</key>
 			<real>95</real>
-		</dict>
-		<key>5FE053E6-4E2E-4F77-8FEC-6EDC185F80B3</key>
-		<dict>
-			<key>xpos</key>
-			<real>660</real>
-			<key>ypos</key>
-			<real>215</real>
 		</dict>
 		<key>6D16581B-F572-42D5-B63D-1BFFD5D4F287</key>
 		<dict>
@@ -1754,7 +1734,7 @@ Merge different chapters into a single file via the `Merge Chapters` Universal A
 		<key>6D3211FD-172C-4461-8846-BABC6B69EF1B</key>
 		<dict>
 			<key>xpos</key>
-			<real>2145</real>
+			<real>1945</real>
 			<key>ypos</key>
 			<real>95</real>
 		</dict>
@@ -1763,7 +1743,7 @@ Merge different chapters into a single file via the `Merge Chapters` Universal A
 			<key>note</key>
 			<string>Check for checksum file</string>
 			<key>xpos</key>
-			<real>2015</real>
+			<real>1815</real>
 			<key>ypos</key>
 			<real>315</real>
 		</dict>
@@ -1781,24 +1761,17 @@ Merge different chapters into a single file via the `Merge Chapters` Universal A
 			<key>ypos</key>
 			<real>295</real>
 		</dict>
-		<key>7CAA3836-7D46-4BEC-9737-5C9274946DC4</key>
-		<dict>
-			<key>xpos</key>
-			<real>770</real>
-			<key>ypos</key>
-			<real>295</real>
-		</dict>
 		<key>7FFEECA0-9BF3-4EED-86B7-BF676463DF7D</key>
 		<dict>
 			<key>xpos</key>
-			<real>1545</real>
+			<real>1345</real>
 			<key>ypos</key>
 			<real>225</real>
 		</dict>
 		<key>8041B93B-F767-4B27-B8B6-7B286EAA4913</key>
 		<dict>
 			<key>xpos</key>
-			<real>1910</real>
+			<real>1710</real>
 			<key>ypos</key>
 			<real>325</real>
 		</dict>
@@ -1807,7 +1780,7 @@ Merge different chapters into a single file via the `Merge Chapters` Universal A
 			<key>note</key>
 			<string>Checksum variables</string>
 			<key>xpos</key>
-			<real>1055</real>
+			<real>855</real>
 			<key>ypos</key>
 			<real>225</real>
 		</dict>
@@ -1828,35 +1801,42 @@ Merge different chapters into a single file via the `Merge Chapters` Universal A
 		<key>A271EC10-8250-46E4-A5BC-EC3BA441F168</key>
 		<dict>
 			<key>xpos</key>
-			<real>2315</real>
+			<real>2115</real>
 			<key>ypos</key>
 			<real>340</real>
+		</dict>
+		<key>C0B7D081-6D04-4C84-9325-DF7D55E52C4C</key>
+		<dict>
+			<key>xpos</key>
+			<real>230</real>
+			<key>ypos</key>
+			<real>830</real>
 		</dict>
 		<key>C2630C26-F47C-426C-BA88-2A3CEB7633ED</key>
 		<dict>
 			<key>xpos</key>
-			<real>2415</real>
+			<real>2215</real>
 			<key>ypos</key>
 			<real>340</real>
 		</dict>
 		<key>D6148047-2BF1-45DD-8F5B-096133BDA320</key>
 		<dict>
 			<key>xpos</key>
-			<real>2315</real>
+			<real>2115</real>
 			<key>ypos</key>
 			<real>125</real>
 		</dict>
 		<key>E0B8F4CD-C7DE-4505-A5AD-F8F5D3B79626</key>
 		<dict>
 			<key>xpos</key>
-			<real>2415</real>
+			<real>2215</real>
 			<key>ypos</key>
 			<real>125</real>
 		</dict>
 		<key>E586FA35-5782-4521-AF79-74504891C4D1</key>
 		<dict>
 			<key>xpos</key>
-			<real>1330</real>
+			<real>1130</real>
 			<key>ypos</key>
 			<real>295</real>
 		</dict>
@@ -1870,21 +1850,21 @@ Merge different chapters into a single file via the `Merge Chapters` Universal A
 		<key>E99452F6-65DF-4390-84A8-80D63833F439</key>
 		<dict>
 			<key>xpos</key>
-			<real>3065</real>
+			<real>2865</real>
 			<key>ypos</key>
 			<real>465</real>
 		</dict>
 		<key>ED285502-6C28-4EC7-906E-04A83A4FF9E8</key>
 		<dict>
 			<key>xpos</key>
-			<real>2500</real>
+			<real>2300</real>
 			<key>ypos</key>
 			<real>95</real>
 		</dict>
 		<key>F0498A2C-2BCE-4E58-8652-C0F03D17A14D</key>
 		<dict>
 			<key>xpos</key>
-			<real>1330</real>
+			<real>1130</real>
 			<key>ypos</key>
 			<real>130</real>
 		</dict>
